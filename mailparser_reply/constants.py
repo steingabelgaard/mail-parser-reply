@@ -75,6 +75,23 @@ MAIL_LANGUAGES: Dict[str, Dict[str, str]] = {
         ],
         'sent_from': 'Sent from my|Get Outlook for',
     },
+    'da': {
+        'wrote_header': r'^(?!Den[.\s]*Den\s(.+?\s?.+?)\sskrev:)(' + QUOTED_MATCH_INCLUDE + r"Den\s(?:.+?\s?.+?)\s?skrev:)$",
+        'from_header': r'((?:(?:^|\n|\n'
+                       + QUOTED_MATCH_INCLUDE
+        + r')[* ]*(?:Fra|Sendt|Til|Emne|Dato|Kopi):[ *]*(?:\s{,2}).*){2,}(?:\n.*){,1})',
+        'disclaimers': [
+            "Vigtig meddelelse:",
+            "Advarsel:",
+        ],
+        'signatures': [
+            'Med venlig hilsen',
+            'Mvh',
+            'Bedste hilsner',
+            'Venlig hilsen',
+        ],
+        'sent_from': 'Sendt fra min',
+    },
     'de': {
         'wrote_header': r'^(?!Am.*Am\s.+?schrieb.*:)('
                         + QUOTED_MATCH_INCLUDE
